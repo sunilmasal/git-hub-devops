@@ -1,0 +1,578 @@
+    1  subscription-manager register 
+    2  subscription-manager register
+    3  subscription-manager identity 
+    4  yum update
+    5  kill -9 4734
+    6  yum update
+    7  reboot
+    8  sudo setenforce 0
+    9  sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+   10   sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+   11  df -Th
+   12  cd /
+   13  ls
+   14  sudo dnf update -y
+   15  yum update -y
+   16  subscription-manager identity 
+   17  cd /etc/yum.repos.d/
+   18  ls
+   19  rm -rf kubernetes.repo 
+   20  yum update -y
+   21  shutdown -h now
+   22  grub2-editenv list
+   23  awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg
+   24  semange
+   25  semanage 
+   26  semanage port --list -l
+   27  yum install docker*
+   28  yum install git*
+   29  yum install kubernet*
+   30  docker volume create my_volume
+   31  podman volume create my_volume
+   32  docker volume ls
+   33  docker run -d --name=mycontainer -v my_volume:/app nginx
+   34  docker ps
+   35  docker ps -a
+   36  docker volume inspect my_volume
+   37  docker attach mycontainer bash
+   38  docker attach mycontainer --bash
+   39  docker run  attach mycontainer --bash
+   40  kubectl get pods
+   41  kubectl cluster-info config
+   42  kubectl create cluster
+   43  kubectl create -h
+   44  history
+   45  kind create cluster --name my-cluster
+   46  kubectl cluster-info --context kind-my-cluster
+   47  kubectl get pods
+   48  kubectl get pods -n kube-system
+   49  kind create cluster --name my-cluster
+   50  kubectl get pods -n kube-system
+   51  kubectl gt pv
+   52  kubectl get pv
+   53  kubectl get pvc
+   54  clear
+   55  kubectl get deployments
+   56  clear
+   57  kubectl
+   58  kubectl api-resources
+   59  kubectl get sc
+   60  kubectl get roles
+   61  kubectl get pc
+   62  kubectl get vac
+   63  kubectl get ip
+   64  kubectl get dns
+   65  kubectl get cm
+   66  kubectl get ing
+   67  vi container.yaml
+   68  kubectl apply -f container.yaml 
+   69  kubetctl get pods
+   70  kubectl get pods
+   71  kubectl get pods -o wide
+   72  kubectl get pods
+   73  kubectl get pods -o wide
+   74  kubectl exec -it pod nginx-deployment-6f9664446b-427xd -- bash
+   75  kubectl exec -it  nginx-deployment-6f9664446b-427xd -- bash
+   76  kubectl get pods
+   77  kubectl exec -it  nginx-deployment-6f9664446b-427xd  -c -- bash
+   78  kubectl exec -it  nginx-deployment-6f9664446b-427xd  -c nginx -- bash
+   79  clear
+   80  kubectl run my-pod --image=iginx
+   81  kubctl get pods
+   82  kubectl get pods
+   83  kubectl run my-pod --image=iginx -o 
+   84  kubectl run my-pod --image=iginx -o yaml
+   85  kubectl run my-pod1 --image=iginx -o yaml
+   86  kubectl run my-pod --image=iginx -o yaml 
+   87  kubectl run my-pod --image=iginx -o yaml > test.yml
+   88  kubectl run my-pod --image=iginx -o yaml > test.yaml
+   89  vi test.yml 
+   90  kubectl run my-pod --image=nginx
+   91  kubectl run my-pod_demo --image=nginx
+   92  kubectl run my-pod-demo --image=nginx
+   93  kubctl get pods
+   94  kubectl get pods
+   95  clear
+   96  vi pod.yaml
+   97  vi pod1.yaml
+   98  kubectl apply -f  pod1.yaml
+   99  vi pod1.yaml
+  100  kubectl apply -f  pod1.yaml
+  101  vi pod1.yaml
+  102  kubectl apply -f  pod1.yaml
+  103  vi pod1.yaml
+  104  kubectl apply -f  pod1.yaml
+  105  vi pod1.yaml
+  106  kubectl apply -f  pod1.yaml
+  107  vi pod1.yaml
+  108  kubectl apply -f  pod1.yaml
+  109  vi pod1.yaml
+  110  kubectl apply -f  pod1.yaml
+  111  kubectl get pod
+  112  vi pod1.yaml
+  113  kubectl get pod
+  114  kubectl descibe pod mypod
+  115  kubectl describe pod mypod
+  116  kubectl log  mypod
+  117  kubectl logs  mypod
+  118  kubectl exec mypod --ls
+  119  kubectl exec mypod -- ls
+  120  kubectl exec mypod -c -- ls
+  121  kubectl exec mypod -c sidecar0-container -- ls
+  122  kubectl exec mypod -c sidecar-container -- ls
+  123  kubectl exec mypod -c sidecar-container -- date
+  124  kubectl exec mypod -c nginxcontainer -- date
+  125  kubectl exec mypod -c nginxcontainer -- ls
+  126  kubectl exec mypod -c nginxcontainer -- bash
+  127  kubectl exec -it mypod -c nginxcontainer -- bash
+  128  kubectl get pods
+  129  vi rc.ymal
+  130  kubectl api-resources
+  131  vi rc.ymal
+  132  vi rc.yml
+  133  kubectl apply -f rc.ym
+  134  kubectl apply -f rc.yml
+  135  vi rc.yml
+  136  kubectl apply -f rc.yml
+  137  vi rc.yml
+  138  kubectl apply -f rc.yml
+  139  kubectl get pods
+  140  vi rc.yml
+  141  kubectl apply -f rc.yml
+  142  vi rc.yml
+  143  kubectl apply -f rc.yml
+  144  kubectl get pods
+  145  kubectl get pods --show-labels
+  146  kubectl get rc
+  147  kubectl describe rc nginx-rc
+  148  kubectl get pods -l app=nginx
+  149  kubectl space rc nginx-rc --replicas=4
+  150  kubectl scale rc nginx-rc --replicas=4
+  151  kubectl get pods
+  152  kubectl get pods -l app=nginx
+  153  kubectl get rc -o wide
+  154  history
+  155  vi rs.yaml
+  156  vi rc.yml
+  157  kuebctl delete -f rc.yml
+  158  kubectl delete -f rc.yml
+  159  kubectl delete rc nginx-rc
+  160  kubectl get all
+  161  kubectl delete rc nginx-rc
+  162  kubectl delete rc nginx-rc -n kube-sysstem
+  163  kubectl delete rc nginx-rc -n kube-system
+  164  kubectl get pods -l app=nginx
+  165  kind create cluster --name demo-cluster
+  166  kubectl apply -f  rs.yaml
+  167  kubectl apply -f  rc.yml
+  168  kubectl get rc
+  169  kubectl delet  rc nginx-rc
+  170  kubectl delete  rc nginx-rc
+  171  kubectl apply -f  rs.yaml
+  172  vi  rs.yaml
+  173  kubectl apply -f rs.yaml
+  174  vi  rs.yaml
+  175  kubectl apply -f rs.yaml
+  176  kubectl api-resources
+  177  vi  rs.yaml
+  178  kubectl apply -f rs.yaml
+  179  vi  rs.yaml
+  180  kubectl apply -f rs.yaml
+  181  vi  rs.yaml
+  182  kubectl apply -f rs.yaml
+  183  vi  rs.yaml
+  184  kubectl apply -f rs.yaml
+  185  kubectl get rs
+  186  kubectl describe rs
+  187  kubectl get all
+  188  kubectl get rc
+  189  kubectl delete replicasets.app nginx-rs
+  190  kubectl get all
+  191  vi  rs.yaml
+  192  cp rs.yaml rsa.yaml 
+  193  vi rsa.yaml 
+  194  kubectl apply -f rsa.yaml 
+  195  vi rsa.yaml 
+  196  kubectl apply -f rsa.yaml 
+  197  kubectl get all
+  198  kubectl get rs -o wide
+  199  kubectl get rs --show-labels
+  200  kubectl get rs --show-labels -o wide
+  201  kubectl get pods --show-labels -o wide
+  202  cp rs.yaml deployment.yaml 
+  203  vi deployment.yaml 
+  204  kubectl apply -f deployment.yaml 
+  205  vi deployment.yaml 
+  206  kubectl apply -f deployment.yaml 
+  207  kubecl get deployment
+  208  kubectl get deployment
+  209  kubectl describe deployment
+  210  kubectl get all
+  211  kubectl delete rs nginx-rs
+  212  kubectl get all
+  213  kubectl get deplo
+  214  kubectl get deploy
+  215  kubectl rollout history deployment nginx-deployment
+  216  vi deployment.yaml 
+  217  kubectl rollout history deployment nginx-deployment
+  218  kubectl apply -f deployment.yaml 
+  219  kubectl rollout history deployment nginx-deployment
+  220  vi deployment.yaml 
+  221  kubectl apply -f deployment.yaml 
+  222  vi deployment.yaml 
+  223  kubectl apply -f deployment.yaml 
+  224  kubectl rollout history deployment nginx-deployment
+  225  vi deployment.yaml 
+  226  kubectl apply -f deployment.yaml 
+  227  vi deployment.yaml 
+  228  kubectl apply -f deployment.yaml 
+  229  vi deployment.yaml 
+  230  kubectl apply -f deployment.yaml 
+  231  vi deployment.yaml 
+  232  kubectl apply -f deployment.yaml 
+  233  vi deployment.yaml 
+  234  kubectl apply -f deployment.yaml 
+  235  vi deployment.yaml 
+  236  kubectl apply -f deployment.yaml 
+  237  vi deployment.yaml 
+  238  kubectl apply -f deployment.yaml 
+  239  vi deployment.yaml 
+  240  kubectl apply -f deployment.yaml 
+  241  vi deployment.yaml 
+  242  kubectl apply -f deployment.yaml 
+  243  vi deployment.yaml 
+  244  kubectl apply -f deployment.yaml 
+  245  vi deployment.yaml 
+  246  kubectl set images deployments nginx-deployment nginx-container=nginx:1.20
+  247  kubectl set image deployments nginx-deployment nginx-container=nginx:1.20
+  248  kubectl get deployments.apps nginx-deployment -o wide
+  249  kubectl rollout deployement nginx-deployment
+  250  kubectl rollout deployment nginx-deployment
+  251  kubectl rollout history deployment nginx-deployment
+  252  kubectl annotate deployment.app nginx-deployment kubernetes.io/chages-cause ="upgraded nginx1.20
+  253  kubectl annotate deployment.apps nginx-deployment kubernetes.io/chages-cause="upgraded nginx1.20
+  254  kubectl annotate deployment.apps nginx-deployment kubernetes.io/chages-cause="upgraded nginx1.20"
+  255  kubectl rollout history deployment nginx-deployment
+  256  kubectl annotate deployment.apps nginx-deployment kubernetes.io/chages-cause="upgraded nginx1.20"
+  257  kubectl rollout history deployment nginx-deployment
+  258  kubectl annotate deployment.apps nginx-deployment kubernetes.io/chages-cause="upgraded nginx1.20"
+  259  kubectl rollout history deployment nginx-deployment
+  260  kubectl get rc
+  261  kubectl get rs
+  262  kubectl rollout undo deployment nginx-deployment --to-revision=1
+  263  kubectl rollout history deployment nginx-deployment
+  264  kubectl get pods -o wide
+  265  kubectl get deployments -o wide
+  266  kubectl get deployments.apps nginx-deployment -o wide
+  267  kubectl annotate deployment.apps nginx-deployment kubernetes.io/chages-cause="upgraded nginx1.20"
+  268  kubectl get deployments.apps nginx-deployment -o wide
+  269  kubectl set image deployments nginx-deployment nginx-container=nginx:1.20
+  270  kubectl get deployments.apps nginx-deployment -o wide
+  271  kubectl rollout undo deployment nginx-deployment --to-revision=1
+  272  kubectl get deployments.apps nginx-deployment -o wide
+  273  kubectl get deployments -o wide
+  274  kubectl rollout undo deployment nginx-deployment --to-revision=1
+  275  kubectl rollout undo deployment nginx-deployment --to-revision=2
+  276  kubectl rollout undo deployment nginx-deployment --to-revision=3
+  277  kubectl get deployments -o wide
+  278  kubectl annotate deployment.apps nginx-deployment kubernetes.io/chages-cause="upgraded nginx1.20"
+  279  kubectl get pods -o wide
+  280  vi backend.yaml
+  281  kubectl apply -f backend.yaml 
+  282  vi backend.yaml
+  283  kubectl apply -f backend.yaml 
+  284  vi backend.yaml
+  285  kubectl apply -f backend.yaml 
+  286  vi backend.yaml
+  287  kubectl apply -f backend.yaml 
+  288  vi backend.yaml
+  289  kubectl apply -f backend.yaml 
+  290  vi backend.yaml
+  291  kubectl apply -f backend.yaml 
+  292  vi backend.yaml
+  293  kubectl apply -f backend.yaml 
+  294  kubectl api-resources
+  295  kubectl apply -f backend.yaml 
+  296  vi backend.yaml
+  297  kubectl apply -f backend.yaml 
+  298  vi backend.yaml
+  299  kubectl apply -f backend.yaml 
+  300  kubectl api-resources | grep Deployment
+  301  vi backend.yaml
+  302  kubectl api-resources | grep Deployment
+  303  kubectl apply -f backend.yaml 
+  304  vi backend.yaml
+  305  kubectl apply -f backend.yaml 
+  306  kubectl api-resources | grep Deployment
+  307  vi backend.yaml
+  308  kubectl api-resources | grep Deployment
+  309  kubectl apply -f backend.yaml 
+  310  vi backend.yaml
+  311  kubectl apply -f backend.yaml 
+  312  vi backend.yaml
+  313  kubectl apply -f backend.yaml 
+  314  kubectl get svc back-end
+  315  kubectl get svc backend-svc
+  316  kubectl get svc back-end-svc
+  317  kubectl get svc back-end-svc -o wide
+  318  kubectl describe svc back-end-svc
+  319  kubectl get pods -o wide
+  320  kubectl run it mynginx --image=nginx -- bash
+  321  kubectl get pods -o wide
+  322  kubectl run -it mynginx --image=nginx -- bash
+  323  kubectl get pods -o wide
+  324  kubectl get nodes -o wide
+  325  kubectl get node
+  326  kubectl get nodes
+  327  kind create cluster --name demo-cluster1
+  328  kind create cluster --name demo-cluster2
+  329  kubectl get nodes
+  330  kubectl get pods
+  331  kind get cluster
+  332  kind get cluster-info
+  333  clear
+  334  kind get cluster
+  335  kind get nodes
+  336  kind get clusters
+  337  kind get -h
+  338  kind get kubeconfig
+  339  kind create cluster --name demo-cluster5
+  340  clear
+  341  kind get clusters
+  342  kind delele cluster --name demo-cluster
+  343  kind delete cluster --name demo-cluster
+  344  kind enable cluster --name demo-cluster1
+  345  kind delete cluster --name demo-cluster1
+  346  kind delete cluster --name demo-cluster2
+  347  kind delete cluster --name demo-cluster3
+  348  kind delete cluster --name my-cluster
+  349  kind get clusters
+  350  vi frontend.yaml 
+  351  kind get clusters
+  352  kubectl apply -f backend.yaml 
+  353  kubectl apply -f frontend.yaml
+  354  kubectl get pods -o wide
+  355  vi backend.yaml 
+  356  kubectl get pods -o wide
+  357  kubectl apply -f frontend.yaml
+  358  kubectl apply -f backend.yaml 
+  359  kubectl get pods -o wide
+  360  kubectl apply -f backend.yaml 
+  361  kubectl get pods -o wide
+  362  kubectl get pods
+  363  kubectl delete pod backend-deploy-56d94db4f5-lv7rq
+  364  kubectl delete pod backend-deploy-56d94db4f5-r8nxp
+  365  kubectl delete pod backend-deploy-56d94db4f5-tk9cd
+  366  kubectl delete pod frontend-deploy-cdcdfdc6f-c98lg
+  367  kubectl delete pod frontend-deploy-cdcdfdc6f-rfd7f
+  368  kubectl delete pod frontend-deploy-cdcdfdc6f-tlvmj
+  369  vi backend.yaml 
+  370  kubectl apply -f backend.yaml 
+  371  kubectl get pods
+  372  kubect delete -h
+  373  kubectl delete -h
+  374  kubectl delete --all -h
+  375  kubectl delete --all nodes
+  376  kubectl get pods
+  377  kubectl delete --all pods
+  378  kubectl get pods
+  379  kind delete cluster --name demo-cluster6
+  380  kind create cluster --name my-cluster
+  381  kubectl get pods
+  382  kubectl apply -f  backend.yaml 
+  383  kubectl get pods
+  384  kubectl logs backend-deploy-5dd5c95544-c6znk
+  385  kubectl log backend-deploy-5dd5c95544-c6znk
+  386  kubectl logs backend-deploy-5dd5c95544-c6znk
+  387  vi backend.yaml 
+  388  kubectl get pods
+  389  kubectl logs backend-deploy-5dd5c95544-c6znk
+  390  kubectl logs pod backend-deploy-5dd5c95544-c6znk
+  391  kubectl logs pods backend-deploy-5dd5c95544-c6znk
+  392  kubectl logs backend-deploy-5dd5c95544-c6znk
+  393  kubectl describe backend-deploy-5dd5c95544-c6znk
+  394  kubectl describe pod backend-deploy-5dd5c95544-c6znk
+  395  kubectl get pods
+  396  docker run docker.io/hashicorp/http-echo
+  397  kubectl get cluster
+  398  kubectl get clusters
+  399  kind get clusters
+  400  kind delete cluster demo-cluster5
+  401  kind delete cluster --name demo-cluster5
+  402  kind delete cluster --name my-cluster
+  403  kind create cluster --name my-cluster
+  404  kubectl apply -f  backend.yaml 
+  405  kubectl get pods
+  406  kubectl logs pod backend-deploy-5dd5c95544-52n6k
+  407  kubectl logs pods backend-deploy-5dd5c95544-52n6k
+  408  kubectl logs pod backend-deploy-5dd5c95544-52n6k
+  409  kubectl logs pod backend-deploy-5dd5c95544-52n6k -n  kube-system
+  410  kubectl logs backend-deploy-5dd5c95544-52n6k -n  kube-system
+  411  kubectl logs backend-deploy-5dd5c95544-52n6k
+  412  kubectl describe backend-deploy-5dd5c95544-52n6k
+  413  kind delete cluster --name kind-my-cluster
+  414  kind create cluster --name kind-my-cluster1
+  415  clear
+  416  kubectl create deployment backend-deploy --image=hashicorp/http-echo --replicas=3
+  417  kubectl create deployment backend-deploy --image=hashicorp/http-echo --replica=3 --port=5678 --dry-run=client -o yaml > backend-deploy.yaml
+  418  kubectl create deployment backend-deploy --image=hashicorp/http-echo --replicas=3 --port=5678 --dry-run=client -o yaml > backend-deploy.yaml
+  419  vi backend-deploy.yaml 
+  420  kubectl get deployment
+  421  kubectl get pods
+  422  vi backend-deploy.yaml
+  423  kubectl get deployment -o wide
+  424  vi backend-deploy.yaml
+  425  kubectl apply -f backend-deploy.yaml 
+  426  vi backend-deploy.yaml
+  427  kubectl apply -f backend-deploy.yaml 
+  428  vi backend-deploy.yaml
+  429  kubectl apply -f backend-deploy.yaml 
+  430  vi backend-deploy.yaml
+  431  kubectl get deployment -o wide
+  432  kubectl get pods
+  433  kubectl expose deployment backend-deploy --type=ClusterIP --port=5678 \
+  434  kubectl expose deployment backend-deploy --type=ClusterIP --port=9090 --target-port=5678 --dry-run-client -o yaml >> backend-deploy --name=backend-svc
+  435  kubectl expose deployment backend-deploy --type=ClusterIP --port=9090 --target-port=5678 --dry-run=client -o yaml >> backend-deploy --name=backend-svc
+  436  kubectl get svc
+  437  ll
+  438  vi backend-deploy
+  439  kubectl apply -f backend-deploy
+  440  kubectl get svc
+  441  clear
+  442  kubectl get svc
+  443  kubectl get deployment
+  444  kubectl get node
+  445  kubectl get all
+  446  kubectl describe svc backend-svc
+  447  kubectl describe svc backend-svc -o wide
+  448  kubectl create deployment frontend-deploy1 --image=nginx --replicas=3 --port=80 --dry-run=client -o yaml > frontend-deploy1.yaml
+  449  kubectl get all
+  450  vi frontend.deply1
+  451  cat frontend-deploy1.yaml
+  452  vi frontend-deploy1.yaml
+  453  kubectl apply -f  frontend-deploy1.yaml
+  454  kubectl get all
+  455  kubectl expose deployment frontend-deploy1 --type=NodePort --port=80 --target-port=80 --frontend-svc --dry-run=clinet -o yaml >> frontend-deploy1.yaml
+  456  kubectl expose deployment frontend-deploy1 --type=NodePort --port=80 --target-port=80 --name=frontend-svc --dry-run=clinet -o yaml >> frontend-deploy1.yaml
+  457  kubectl expose deployment frontend-deploy1 --type=NodePort --port=80 --target-port=80 --name=frontend-svc --dry-run=client -o yaml >> frontend-deploy1.yaml
+  458  kubectl get all
+  459  vi frontend-svc
+  460  vi frontend-deploy1.yaml
+  461  kubectl apply -f  frontend-deploy1.yaml
+  462  kubectl get all
+  463  vi frontend-deploy1.yaml
+  464  kubectl apply -f  frontend-deploy1.yaml
+  465  kubectl get all
+  466  kubectl describe svc frontend-svc
+  467  kubectl get pods
+  468  kubectl get pods -o wide
+  469  kubectl run test-pod --rm -it --restart-Never --labels=app-test-pod --image=nginx /bin/bash
+  470  kubectl run test-pod --rm -it --restart=Never --labels=app-test-pod --image=nginx /bin/bash
+  471  kubectl run test-pod --rm -it --restart=Never --labels=app=test-pod --image=nginx /bin/bash
+  472  kubectl get pods --show-labels
+  473  kubectl get pods
+  474  kubectl run test-pod --rm -it --restart=Never --labels=app=test-pod --image=nginx
+  475  kubectl get pods
+  476  kubectl run test-pod -it --restart=Never --labels=app=test-pod --image=nginx
+  477  kubectl get pods
+  478  kubectl get pods --show-labels
+  479  kubectl get all
+  480  curl backend-svc 9090
+  481  curl backend-svc:9090
+  482  kubectl get all
+  483  curl backend-svc:9090
+  484  cat /etc/resolv.conf 
+  485  vi /etc/resolv.conf 
+  486  curl backend-svc:9090
+  487  curl frontend-svc:80
+  488  kubectl exec -it pod test-pod -- bin/bash
+  489  kubectl exec -it test-pod -- bin/bash
+  490  kubectl exec -it test-pod -- bash
+  491  kubectl exec -it test-pod -- bin/bash
+  492  kubectl exec -it test-pod -- /bin/bash
+  493  kubectl get all
+  494  kubectl run test-pod1 -it --restart=Never --labels=app=test-pod --image=nginx
+  495  kubectl run test-pod4 --rm -it --restart=Never --labels=app=test-pod --image=nginx
+  496  kubectl run test-pod1 -it --image=nginx
+  497  kubectl run test-pod7 -it --image=nginx
+  498  kubectl get svc -n kune-system
+  499  kubectl get svc -n kube-system
+  500  df -Th
+  501  kind create cluster --config nodes.yaml 
+  502  kind delete cluster kind
+  503  kind delete cluster
+  504  kind create cluster --config nodes.yaml 
+  505  kubectl get nodes
+  506  git --version
+  507  mkdir
+  508  mkdir gitbucket
+  509  cd gitbucket/
+  510  git init
+  511  git status
+  512  kubectl top nodes
+  513  kubectl top node
+  514  kubectl get pods
+  515  kubectl get noes
+  516  kubectl get nodes
+  517  echo 1> --help
+  518  echo 1 > --help
+  519  clear
+  520  git --version
+  521  rpm -qa | grep visual
+  522  mkdir gitstudy
+  523  cd  gitstudy/
+  524  testing.py
+  525  vi testing.py
+  526  ls -l
+  527  cd
+  528  git init
+  529  c git
+  530  cd /root/.git/
+  531  ls
+  532  git status
+  533  cd ..
+  534  cd /root/.git/
+  535  ls
+  536  cd
+  537  mkdir gitrepo
+  538  cd gitrepo/
+  539  git init
+  540  git status
+  541  clear
+  542  ls
+  543  git status
+  544  cd
+  545  ls
+  546  cp hellow.py /root/.git/
+  547  cd gitrepo/
+  548  git status
+  549  touch test.py
+  550  git status
+  551  vi test.py
+  552  git status
+  553  git add test.py 
+  554  git status
+  555  git rm --cached test.py 
+  556  git status
+  557  git add test.py 
+  558  git status
+  559  clear
+  560  git status
+  561  git commit -m "addes testing file"
+  562  git commit -m "added testing file"
+  563  git config --global user.name sunilm
+  564  git commit -m "added testing file"
+  565  git config --global user.name "sunilm"
+  566  git commit -m "added testing file"
+  567  git config --global user.email sunilmasal3@gmail.com
+  568  git commit -m "added testing file"
+  569  git status
+  570  rm test.py 
+  571  ls
+  572  git status
+  573  git restore test.py 
+  574  git status
+  575  ls
+  576  git histrory
+  577  history
+
